@@ -30,6 +30,8 @@ void ListeSimple (void)
 
 }// ListeSimple ()
 
+
+
 void ListeSimpleV2 ()
 {
     cout << "ListeSimpleV2 : \n\n";
@@ -50,13 +52,15 @@ void ListeSimpleV2 ()
     CNode<int>* ptr = AList.Find (i);
     AList.Add (3*i, ptr);
     AList.Show ();
-
     cout << ((ptr != NULL)?  " " : "non ") << "trouve" << endl;
 
 }
 
+
+
 int main(int argc, char *argv[])
 {
+    //ListeSimple();
     ListeSimpleV2();
     return 0;
 }

@@ -22,7 +22,7 @@ class CNode
          delete m_Next;
       }
 
-     T getMData() const {return this->m_data;}
+     const T &getMData() const {return this->m_data;}
 
      void setMData(T data){this->m_data = data;}
 
