@@ -17,11 +17,11 @@ public:
 
     //getter / setter
     const T &GetData () const;
-    std::shared_ptr<CNode<T>> GetLC () const;
     void SetData (const T & val);
-    void SetLC (const std::shared_ptr<CNode<T>> &ANode);
-    std::shared_ptr<CNode<T> > GetRC() const;
-    void setRC(const std::shared_ptr<CNode<T> > &Prev);
+    const std::shared_ptr<CNode<T>>& GetLC () const;
+    void setLC (const std::shared_ptr<CNode<T>> &leftChild);
+    const std::shared_ptr<CNode<T> > &GetRC() const;
+    void setRC(const std::shared_ptr<CNode<T> > &rightChild);
 };
 
 template <typename T>
@@ -35,7 +35,7 @@ const T & CNode<T>::GetData () const
 }
 
 template <typename T>
-std::shared_ptr<CNode<T>> CNode<T>::GetRC () const
+const std::shared_ptr<CNode<T>> & CNode<T>::GetRC () const
 {
     return m_RC;
 }
@@ -48,13 +48,14 @@ void CNode<T>::SetData (const T & val)
 }
 
 template <typename T>
-void CNode<T>::setRC(const std::shared_ptr<CNode<T> > &Prev)
+void CNode<T>::setRC(const std::shared_ptr<CNode<T> > &rightChild)
+
 {
-    m_RC = ANode;
+    m_RC = rightChild;
 }
 
 template <typename T>
-std::shared_ptr<CNode<T>> CNode<T>::GetLC() const
+const std::shared_ptr<CNode<T>> & CNode<T>::GetLC() const
 {
     return m_LC;
 }
